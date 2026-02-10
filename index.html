@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UniTrack</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen p-6">
+  <h1 class="text-3xl font-bold mb-2">UniTrack</h1>
+  <p class="text-gray-600 mb-6">Private. Secure. Student Life, Simplified.</p>
+
+  <div class="flex gap-3 mb-6 flex-wrap">
+    <button onclick="show('study')" class="px-4 py-2 rounded-xl bg-black text-white">STUDY</button>
+    <button onclick="show('fitness')" class="px-4 py-2 rounded-xl bg-white shadow">FITNESS</button>
+    <button onclick="show('analytics')" class="px-4 py-2 rounded-xl bg-white shadow">ANALYTICS</button>
+    <button onclick="show('security')" class="px-4 py-2 rounded-xl bg-white shadow">SECURITY</button>
+  </div>
+
+  <div id="content" class="bg-white p-6 rounded-2xl shadow"></div>
+
+  <script>
+    const sections = {
+      study: `<h2 class='text-xl font-semibold mb-4'>Academic Tracking</h2>
+              <ul class='list-disc ml-5 space-y-1'>
+                <li>Subject-wise planner</li>
+                <li>Assignments and exams</li>
+                <li>Pomodoro focus</li>
+                <li>Attendance and syllabus tracking</li>
+                <li>Offline notes</li>
+              </ul>`,
+      fitness: `<h2 class='text-xl font-semibold mb-4'>Gym and Sports</h2>
+                <ul class='list-disc ml-5 space-y-1'>
+                  <li>Workout logging</li>
+                  <li>Cardio and sports tracking</li>
+                  <li>Progress monitoring</li>
+                  <li>Recovery days</li>
+                </ul>`,
+      analytics: `<h2 class='text-xl font-semibold mb-4'>Analytics</h2>
+                  <ul class='list-disc ml-5 space-y-1'>
+                    <li>Weekly summaries</li>
+                    <li>Study and fitness balance</li>
+                    <li>Read-only insights</li>
+                  </ul>`,
+      security: `<h2 class='text-xl font-semibold mb-4'>Security</h2>
+                 <ul class='list-disc ml-5 space-y-1'>
+                   <li>Static-site security (no backend)</li>
+                   <li>HTTPS-only deployment</li>
+                   <li>No ads or trackers</li>
+                   <li>Zero social features</li>
+                 </ul>`
+    };
+
+    function show(tab) {
+      document.getElementById('content').innerHTML = sections[tab];
+    }
+
+    show('study');
+  </script>
+</body>
+</html>
